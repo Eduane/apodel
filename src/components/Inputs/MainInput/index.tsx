@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React, { FC } from "react";
 import styles from "./style";
-import { MainInputProps } from "../../types/MainComponents";
+import { MainInputProps } from "../../../types/MainComponents";
 
 const MainInput: FC<MainInputProps> = ({
   topLabel,

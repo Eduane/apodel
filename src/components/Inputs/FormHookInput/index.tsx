@@ -1,7 +1,7 @@
-import {View, Text, TextInputProps} from 'react-native';
-import React, {FC} from 'react';
-import {Controller, UseControllerProps} from 'react-hook-form';
-import MainInput from '../MainInput';
+import { View, Text, TextInputProps } from "react-native";
+import React, { FC } from "react";
+import { Controller, UseControllerProps } from "react-hook-form";
+import MainInput from "../MainInput";
 
 interface FormHookInputProps extends UseControllerProps {
   topLabel?: string;
@@ -23,16 +23,16 @@ const FormHookInput: FC<FormHookInputProps> = ({
   return (
     <Controller
       {...props}
-      render={({field: {onChange, onBlur, value}}) => (
+      render={({ field: { onChange, onBlur, value } }) => (
         <MainInput
-          containerStyle={{marginBottom: 5, ...containerStyle}}
-          placeholderTextColor={placeholderTextColor || 'gray'}
+          containerStyle={{ marginBottom: 5, ...containerStyle }}
+          placeholderTextColor={placeholderTextColor || "gray"}
           placeholder={placeholder}
           onChangeText={onChange}
           topLabel={topLabel}
           value={value}
           onBlur={onBlur}
-          bottomLabel={props?.errors?.[props?.name]?.message ?? ''}
+          bottomLabel={props?.errors?.[props?.name]?.message ?? ""}
           {...inputProps}
         />
       )}
