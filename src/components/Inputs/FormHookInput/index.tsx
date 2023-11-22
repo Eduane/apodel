@@ -1,7 +1,8 @@
-import { View, Text, TextInputProps } from "react-native";
+import { TextInputProps } from "react-native";
 import React, { FC } from "react";
 import { Controller, UseControllerProps } from "react-hook-form";
 import MainInput from "../MainInput";
+import CustomPhoneInput from "../CustomPhoneInput";
 
 interface FormHookInputProps extends UseControllerProps {
   topLabel?: string;
@@ -10,6 +11,8 @@ interface FormHookInputProps extends UseControllerProps {
   placeholderTextColor?: string;
   containerStyle?: {};
   inputProps?: TextInputProps;
+  secureTextEntry: boolean;
+  phoneInput: boolean;
 }
 
 const FormHookInput: FC<FormHookInputProps> = ({
@@ -18,24 +21,35 @@ const FormHookInput: FC<FormHookInputProps> = ({
   placeholderTextColor,
   containerStyle,
   inputProps,
+  secureTextEntry,
+  phoneInput,
   ...props
 }) => {
   return (
     <Controller
       {...props}
-      render={({ field: { onChange, onBlur, value } }) => (
-        <MainInput
-          containerStyle={{ marginBottom: 5, ...containerStyle }}
-          placeholderTextColor={placeholderTextColor || "gray"}
-          placeholder={placeholder}
-          onChangeText={onChange}
-          topLabel={topLabel}
-          value={value}
-          onBlur={onBlur}
-          bottomLabel={props?.errors?.[props?.name]?.message ?? ""}
-          {...inputProps}
-        />
-      )}
+      render={({ field: { onChange, onBlur, value } }) => {
+        return phoneInput ? (
+          <CustomPhoneInput
+            onValueChange={onChange}
+            bottomLabel={props?.errors?.[props?.name]?.message ?? ""}
+            placeholder={placeholder}
+          />
+        ) : (
+          <MainInput
+            containerStyle={containerStyle}
+            placeholderTextColor={placeholderTextColor || "gray"}
+            placeholder={placeholder}
+            onChangeText={onChange}
+            topLabel={topLabel}
+            value={value}
+            secureTextEntry={secureTextEntry}
+            onBlur={onBlur}
+            bottomLabel={props?.errors?.[props?.name]?.message ?? ""}
+            {...inputProps}
+          />
+        );
+      }}
     />
   );
 };
