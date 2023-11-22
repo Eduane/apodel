@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../../../components/Buttons/MainButton";
-import { goBack } from "../../../utils/navigationActions";
+import { goBack, navigate } from "../../../utils/navigationActions";
 import styles from "./styles";
 import { KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
 import FormHookInput from "../../../components/Inputs/FormHookInput";
@@ -21,6 +21,7 @@ const LoginScreen = () => {
   const onSubmit = (data) => {
     // Handle form submission here
     console.log(data);
+    navigate("App");
   };
 
   return (
