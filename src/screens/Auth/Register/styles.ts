@@ -9,8 +9,12 @@ const styles = StyleSheet.create({
     alignItems:"center",
     paddingHorizontal:layoutHelpers.screenContainerSpace
  },
- bottomPart:{alignItems: "center" ,marginBottom:20}
-
+ bottomPart:{alignItems: "center" ,marginBottom:20},
+ image:{
+  width:150,
+  height:50,
+  alignSelf:'center'
+}
 });
 
 export default styles;

@@ -13,6 +13,10 @@ const styles = StyleSheet.create({
     color: Colors.black,
     marginBottom: 5,
     fontFamily: fonts.medium,
+    width:'100%',
+    marginTop:5,
+    marginLeft:10,
+    fontWeight:'600'
   },
   bottomLabel: {fontSize: 12, color: 'red', marginBottom: 5, marginTop: 5},
   inputStyle: {
@@ -21,14 +25,20 @@ const styles = StyleSheet.create({
     padding: 0,
     margin: 0,
     color: Colors.black,
-    backgroundColor: Colors.white,
-    fontFamily: fonts.medium,
+    fontFamily: fonts.medium, 
+height:'100%',
 
   },
-  inputWrapper:{ flexDirection: "row" ,alignItems:'center',paddingHorizontal:10, width: '100%',
-  backgroundColor: Colors.white,
+  inputWrapper:{ 
+  flexDirection: "row" ,paddingHorizontal:10, width: '100%',
+  backgroundColor:Colors.white,
   height: 50,
-borderRadius:8
+borderRadius:8,
+
+},
+eyeIcon:{
+justifyContent:'center',
+paddingHorizontal:5
 }
 });
 

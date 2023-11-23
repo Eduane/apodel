@@ -18,9 +18,13 @@ const MainInput: FC<MainInputProps> = ({
     setPasswordVisibility(!isPasswordVisible);
   };
   return (
-    <View style={[styles.container, containerStyle]}>
-      {topLabel && <MainText style={styles.topLabel}>{topLabel}</MainText>}
-      <View style={styles.inputWrapper}>
+    <View style={[styles.container]}>
+      {topLabel && (
+        <MainText weight="bold" textStyle={styles.topLabel}>
+          {topLabel}
+        </MainText>
+      )}
+      <View style={[styles.inputWrapper, containerStyle]}>
         <TextInput
           placeholderTextColor={"gray"}
           secureTextEntry={secureTextEntry && isPasswordVisible}
@@ -28,7 +32,10 @@ const MainInput: FC<MainInputProps> = ({
           {...props}
         />
         {secureTextEntry && (
-          <TouchableOpacity onPress={togglePasswordVisibility}>
+          <TouchableOpacity
+            style={styles.eyeIcon}
+            onPress={togglePasswordVisibility}
+          >
             <FontAwesomeIcon // Use FontAwesomeIcon
               name={isPasswordVisible ? "eye" : "eye-slash"}
               size={24}

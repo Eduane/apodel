@@ -3,11 +3,18 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MainButton from "../../../components/Buttons/MainButton";
 import { goBack, navigate } from "../../../utils/navigationActions";
 import styles from "./styles";
-import { KeyboardAvoidingView, Platform, ScrollView, View } from "react-native";
+import {
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  View,
+} from "react-native";
 import FormHookInput from "../../../components/Inputs/FormHookInput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./helpers";
+import Logo from "../../../assets/images/logoGray.png";
 
 const LoginScreen = () => {
   const {
@@ -26,6 +33,8 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <Image resizeMode="contain" source={Logo} style={styles.image} />
+
       <KeyboardAvoidingView
         behavior={Platform.OS == "ios" ? "padding" : undefined}
         style={{ flex: 1 }}

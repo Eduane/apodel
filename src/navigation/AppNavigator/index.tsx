@@ -10,6 +10,8 @@ import FavoriteScreen from "../../screens/App/Favorite";
 import HomeScreen from "../../screens/App/Home";
 import CartScreen from "../../screens/App/Cart";
 import ProfileScreen from "../../screens/App/Profile";
+import Icon from "react-native-vector-icons/FontAwesome";
+
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
@@ -35,15 +37,10 @@ const AppNavigator = () => {
                 focused={focused}
                 label="Porositë"
                 icon={
-                  <View
-                    style={[
-                      styles.placeHolder,
-                      {
-                        backgroundColor: focused
-                          ? Colors.orange
-                          : Colors.backgroundColor,
-                      },
-                    ]}
+                  <Icon
+                    name="list"
+                    size={25}
+                    color={focused ? Colors?.blue : Colors?.lightBlue1}
                   />
                 }
               />
@@ -61,15 +58,10 @@ const AppNavigator = () => {
                 focused={focused}
                 label="Të preferuara"
                 icon={
-                  <View
-                    style={[
-                      styles.placeHolder,
-                      {
-                        backgroundColor: focused
-                          ? Colors.orange
-                          : Colors.backgroundColor,
-                      },
-                    ]}
+                  <Icon
+                    name="heart"
+                    size={25}
+                    color={focused ? Colors?.blue : Colors?.lightBlue1}
                   />
                 }
               />
@@ -87,15 +79,10 @@ const AppNavigator = () => {
                 focused={focused}
                 label="Home"
                 icon={
-                  <View
-                    style={[
-                      styles.placeHolder,
-                      {
-                        backgroundColor: focused
-                          ? Colors.orange
-                          : Colors.backgroundColor,
-                      },
-                    ]}
+                  <Icon
+                    name="home"
+                    size={25}
+                    color={focused ? Colors?.blue : Colors?.lightBlue1}
                   />
                 }
               />
@@ -113,15 +100,10 @@ const AppNavigator = () => {
                 focused={focused}
                 label="Shporta"
                 icon={
-                  <View
-                    style={[
-                      styles.placeHolder,
-                      {
-                        backgroundColor: focused
-                          ? Colors.orange
-                          : Colors.backgroundColor,
-                      },
-                    ]}
+                  <Icon
+                    name="shopping-cart"
+                    size={25}
+                    color={focused ? Colors?.blue : Colors?.lightBlue1}
                   />
                 }
               />
@@ -139,15 +121,10 @@ const AppNavigator = () => {
                 focused={focused}
                 label="Profili"
                 icon={
-                  <View
-                    style={[
-                      styles.placeHolder,
-                      {
-                        backgroundColor: focused
-                          ? Colors.orange
-                          : Colors.backgroundColor,
-                      },
-                    ]}
+                  <Icon
+                    name="user"
+                    size={25}
+                    color={focused ? Colors?.blue : Colors?.lightBlue1}
                   />
                 }
               />

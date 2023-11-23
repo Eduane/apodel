@@ -6,13 +6,14 @@ const styles = StyleSheet.create({
     height: 45,
     marginBottom: 5,
     minWidth: 65,
-    alignSelf: 'center',
+    justifyContent:'center',
   },
-
   label: {fontSize: 12},
   icon: {
     height: 25,
     width: 25,
+    justifyContent:'center',
+    alignItems:'center',
   },
 });
 
