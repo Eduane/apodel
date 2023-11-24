@@ -15,6 +15,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./helpers";
 import Logo from "../../../assets/images/logoGray.png";
+import AuthLayout from "../../../layout/AuthLayout";
 
 const LoginScreen = () => {
   const {
@@ -32,7 +33,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <AuthLayout>
       <Image resizeMode="contain" source={Logo} style={styles.image} />
 
       <KeyboardAvoidingView
@@ -66,7 +67,7 @@ const LoginScreen = () => {
           <MainButton onPress={() => goBack()} size="large" label="Kthehu" />
         </View>
       </KeyboardAvoidingView>
-    </SafeAreaView>
+    </AuthLayout>
   );
 };
 

@@ -2,7 +2,7 @@ import { View, Text, KeyboardAvoidingView, Platform } from "react-native";
 import React, { useState } from "react";
 import styles from "./styles";
 import { SafeAreaView } from "react-native-safe-area-context";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/Feather";
 import { Colors } from "../../../constants/colors";
 import MainButton from "../../../components/Buttons/MainButton";
 import { ScrollView } from "react-native-gesture-handler";
@@ -11,6 +11,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { initialFormValues, validationSchema } from "./helpers";
 import { navigate } from "../../../utils/navigationActions";
+import LastAddresCard from "./LastAddresCard";
+import SavedAddressesButton from "./SavedAddressesButton";
 
 const ProfileScreen = () => {
   const [canEdit, setCanEdit] = useState(false);
@@ -86,6 +88,7 @@ const ProfileScreen = () => {
             placeholder="Data e regjistrimit"
             topLabel="Data e regjistrimit"
           />
+
           <FormHookInput
             disabled
             containerStyle={styles.inputContainer}
@@ -108,13 +111,16 @@ const ProfileScreen = () => {
               size="small"
             />
           </View>
-          <MainButton
-            onPress={() => navigate("Auth", { screen: "Welcome" })}
-            size="small"
-            containerStyle={styles.submitButton}
-            label="Dil"
-          />
+          <LastAddresCard />
+          <SavedAddressesButton />
         </ScrollView>
+
+        <MainButton
+          onPress={() => navigate("Auth", { screen: "Welcome" })}
+          size="small"
+          containerStyle={styles.submitButton}
+          label="Dil"
+        />
       </KeyboardAvoidingView>
     </SafeAreaView>
   );

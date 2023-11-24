@@ -3,13 +3,12 @@ import { Colors } from '../../../constants/colors';
 const styles = StyleSheet.create({
    safeArea:{
       flex:1,
-      backgroundColor:Colors.lightBlue1
+      backgroundColor:Colors.white
    },
  container:{
     flex:1,
     justifyContent:"center",
     alignItems:"center",
-    backgroundColor:Colors.lightBlue1
  },
  loginButton:{ marginBottom: 5 },
  image:{

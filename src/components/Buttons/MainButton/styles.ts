@@ -18,7 +18,7 @@ const buttonSizes = {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.lightBlue,
+    backgroundColor: Colors.lightBlue1,
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,

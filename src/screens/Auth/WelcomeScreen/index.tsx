@@ -5,10 +5,11 @@ import styles from "./styles";
 import { navigate } from "../../../utils/navigationActions";
 import { Image, View } from "react-native";
 import Logo from "../../../assets/images/logoGray.png";
+import AuthLayout from "../../../layout/AuthLayout";
 
 const WelcomeScreen = () => {
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <AuthLayout>
       <Image resizeMode="contain" source={Logo} style={styles.image} />
       <View style={styles.container}>
         <MainButton
@@ -23,7 +24,7 @@ const WelcomeScreen = () => {
           label="Regjistrohu"
         />
       </View>
-    </SafeAreaView>
+    </AuthLayout>
   );
 };
 

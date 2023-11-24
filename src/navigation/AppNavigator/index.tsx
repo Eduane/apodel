@@ -10,7 +10,7 @@ import FavoriteScreen from "../../screens/App/Favorite";
 import HomeScreen from "../../screens/App/Home";
 import CartScreen from "../../screens/App/Cart";
 import ProfileScreen from "../../screens/App/Profile";
-import Icon from "react-native-vector-icons/FontAwesome";
+import Icon from "react-native-vector-icons/Feather";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,7 +40,7 @@ const AppNavigator = () => {
                   <Icon
                     name="list"
                     size={25}
-                    color={focused ? Colors?.blue : Colors?.lightBlue1}
+                    color={focused ? Colors?.lightBlue : Colors?.lightGray1}
                   />
                 }
               />
@@ -61,7 +61,7 @@ const AppNavigator = () => {
                   <Icon
                     name="heart"
                     size={25}
-                    color={focused ? Colors?.blue : Colors?.lightBlue1}
+                    color={focused ? Colors?.lightBlue : Colors?.lightGray1}
                   />
                 }
               />
@@ -82,7 +82,7 @@ const AppNavigator = () => {
                   <Icon
                     name="home"
                     size={25}
-                    color={focused ? Colors?.blue : Colors?.lightBlue1}
+                    color={focused ? Colors?.lightBlue : Colors?.lightGray1}
                   />
                 }
               />
@@ -103,7 +103,7 @@ const AppNavigator = () => {
                   <Icon
                     name="shopping-cart"
                     size={25}
-                    color={focused ? Colors?.blue : Colors?.lightBlue1}
+                    color={focused ? Colors?.lightBlue : Colors?.lightGray1}
                   />
                 }
               />
@@ -124,7 +124,7 @@ const AppNavigator = () => {
                   <Icon
                     name="user"
                     size={25}
-                    color={focused ? Colors?.blue : Colors?.lightBlue1}
+                    color={focused ? Colors?.lightBlue : Colors?.lightGray}
                   />
                 }
               />
