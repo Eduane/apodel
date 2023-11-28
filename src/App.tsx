@@ -5,8 +5,6 @@ import Toast from "react-native-toast-message";
 import { enableLatestRenderer } from "react-native-maps";
 import { PermissionsAndroid } from "react-native";
 
-enableLatestRenderer();
-
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -31,6 +29,8 @@ const App = () => {
     }
   }
   useEffect(() => {
+    enableLatestRenderer();
+
     requestLocationPermission();
   }, []);
   return (

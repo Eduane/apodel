@@ -4,7 +4,7 @@ import MainButton from "../../../components/Buttons/MainButton";
 import styles from "./styles";
 import { navigate } from "../../../utils/navigationActions";
 import { Image, View } from "react-native";
-import Logo from "../../../assets/images/logoGray.png";
+import Logo from "../../../assets/images/logoYellow.png";
 import AuthLayout from "../../../layout/AuthLayout";
 
 const WelcomeScreen = () => {

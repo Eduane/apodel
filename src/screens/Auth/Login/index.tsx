@@ -14,7 +14,7 @@ import FormHookInput from "../../../components/Inputs/FormHookInput";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./helpers";
-import Logo from "../../../assets/images/logoGray.png";
+import Logo from "../../../assets/images/logoYellow.png";
 import AuthLayout from "../../../layout/AuthLayout";
 
 const LoginScreen = () => {
