@@ -11,6 +11,7 @@ import HomeScreen from "../../screens/App/Home";
 import CartScreen from "../../screens/App/Cart";
 import ProfileScreen from "../../screens/App/Profile";
 import Icon from "react-native-vector-icons/Feather";
+import HomeNavigator from "./HomeNavigator";
 
 const Tab = createBottomTabNavigator();
 
@@ -90,7 +91,7 @@ const AppNavigator = () => {
           },
         }}
         name="Home"
-        component={HomeScreen}
+        component={HomeNavigator}
       />
       <Tab.Screen
         options={{

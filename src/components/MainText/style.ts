@@ -28,15 +28,15 @@ const styles = StyleSheet.create({
   },
   regularSize: {
     fontSize: 14,
-    lineHeight: 14,
+    lineHeight: 16,
   },
   large: {
     fontSize: 16,
-    lineHeight: 16,
+    lineHeight: 18,
   },
   xlarge: {
     fontSize: 18,
-    lineHeight: 18,
+    lineHeight: 20,
   },
 });
 

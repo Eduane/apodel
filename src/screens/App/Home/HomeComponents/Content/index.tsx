@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./styles";
 import Item from "./Item";
 import { data, isRestaurantOpen } from "./helpers";
+import { navigate } from "../../../../../utils/navigationActions";
 
 const Content = () => {
   return (
@@ -11,7 +12,7 @@ const Content = () => {
       data={data}
       renderItem={({ item }) => (
         <Item
-          onPress={() => console.log("pressed")}
+          onPress={() => navigate("RestaurantDetails")}
           isClosed={!isRestaurantOpen(item?.schedule)}
           data={item}
         />

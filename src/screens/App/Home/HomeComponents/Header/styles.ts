@@ -1,6 +1,6 @@
 import { StyleSheet, Platform } from 'react-native';
-import { layoutHelpers } from '../../../../constants/helpers';
-import { Colors } from '../../../../constants/colors';
+import { layoutHelpers } from '../../../../../constants/helpers';
+import { Colors } from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
 container:{

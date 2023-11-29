@@ -19,7 +19,7 @@ const CartScreen = () => {
 
   return (
     <View style={styles.container}>
-      <MainHeader title="Shporta" />
+      <MainHeader showLeftIcon={false} title="Shporta" />
       <ProductListComponent
         storeName={storeName}
         numberOfProducts={numberOfProducts}

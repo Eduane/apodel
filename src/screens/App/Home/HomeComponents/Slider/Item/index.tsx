@@ -1,10 +1,10 @@
 import { View, Image, TouchableOpacity } from "react-native";
 import React, { FC } from "react";
 import styles from "./styles";
-import MainText from "../../../../../components/MainText";
-import ImagePlaceholder from "../../../../../assets/images/imagePlaceHolder.jpg";
-import { SliderItemType } from "../../../../../types/slider";
-import { Colors } from "../../../../../constants/colors";
+import MainText from "../../../../../../components/MainText";
+import ImagePlaceholder from "../../../../../../assets/images/imagePlaceHolder.jpg";
+import { SliderItemType } from "../../../../../../types/slider";
+import { Colors } from "../../../../../../constants/colors";
 
 interface ItemProps {
   data: SliderItemType;

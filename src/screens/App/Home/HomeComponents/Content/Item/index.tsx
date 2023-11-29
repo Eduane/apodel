@@ -1,12 +1,11 @@
 import React, { FC } from "react";
 import { View, ImageBackground, TouchableOpacity } from "react-native";
-import ImagePlaceholder from "../../../../../assets/images/imagePlaceHolder.jpg";
+import ImagePlaceholder from "../../../../../../assets/images/imagePlaceHolder.jpg";
 import styles from "./styles";
-import MainText from "../../../../../components/MainText";
+import MainText from "../../../../../../components/MainText";
 import Icon from "react-native-vector-icons/Fontisto";
-import { Colors } from "../../../../../constants/colors";
-import { RestaurantData } from "../../../../../types/home";
-import { data } from "../helpers";
+import { Colors } from "../../../../../../constants/colors";
+import { RestaurantData } from "../../../../../../types/home";
 import dayjs from "dayjs";
 
 interface ItemProps {

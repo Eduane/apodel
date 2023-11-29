@@ -1,9 +1,9 @@
 import { View, Text, ImageBackground } from "react-native";
 import React from "react";
-import SearchInput from "../../../../components/Inputs/SearchInput";
-import PlaceholderImage from "../../../../assets/images/imagePlaceHolder.jpg";
+import SearchInput from "../../../../../components/Inputs/SearchInput";
+import PlaceholderImage from "../../../../../assets/images/imagePlaceHolder.jpg";
 import styles from "./styles";
-import MainText from "../../../../components/MainText";
+import MainText from "../../../../../components/MainText";
 
 const Header = () => {
   return (

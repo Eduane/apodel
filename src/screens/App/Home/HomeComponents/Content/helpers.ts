@@ -92,7 +92,7 @@ export const isRestaurantOpen = (schedule: any[]): boolean => {
   const currentDayOfWeek = dayjs().format("dddd"); // Get the full day name
 
   // Find the day-specific schedule for the current day of the week
-  const currentSchedule = schedule.find((item) => item.day === currentDayOfWeek);
+  const currentSchedule = schedule?.find((item) => item?.day === currentDayOfWeek);
 
   // Check if the restaurant is closed for the current day
   if (!currentSchedule) {
@@ -103,10 +103,10 @@ export const isRestaurantOpen = (schedule: any[]): boolean => {
   const currentTime = dayjs();
 
   // Split the opening and closing times into hours and minutes
-  const openFromParts = currentSchedule.openFrom.split(":");
-  const closeAtParts = currentSchedule.closeAt.split(":");
+  const openFromParts = currentSchedule?.openFrom.split(":");
+  const closeAtParts = currentSchedule?.closeAt.split(":");
 
-  if (openFromParts.length !== 2 || closeAtParts.length !== 2) {
+  if (openFromParts?.length !== 2 || closeAtParts?.length !== 2) {
     // Invalid time format
     return false;
   }
@@ -116,7 +116,7 @@ export const isRestaurantOpen = (schedule: any[]): boolean => {
 
   // Convert currentSchedule.closeAt to the current date
   const closeAtTime = currentTime
-    .set("hour", parseInt(currentSchedule.closeAt, 10))
+    .set("hour", parseInt(currentSchedule?.closeAt, 10))
     .set("minute", 0); // Assume minutes are always 00
 
   // Construct dayjs objects with the parsed time
