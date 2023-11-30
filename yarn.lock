@@ -2904,14 +2904,9 @@ csstype@^3.0.2:
   resolved "https://registry.npmjs.org/csstype/-/csstype-3.1.2.tgz"
   integrity sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==
 
-dayjs@^1.11.10:
+dayjs@^1.11.10, dayjs@^1.8.15:
   version "1.11.10"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.10.tgz#68acea85317a6e164457d6d6947564029a6a16a0"
-  integrity sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==
-
-dayjs@^1.8.15:
-  version "1.11.10"
-  resolved "https://registry.npmjs.org/dayjs/-/dayjs-1.11.10.tgz"
   integrity sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==
 
 debug@2.6.9, debug@^2.2.0:
@@ -5801,6 +5796,11 @@ react-is@^17.0.1:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
+
+react-native-collapsible@^1.6.1:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/react-native-collapsible/-/react-native-collapsible-1.6.1.tgz#27e289831a6955aebde98abff2424a7710f36f02"
+  integrity sha512-orF4BeiXd2hZW7fu9YcqIJXzN6TJcFcddY807D3MAOVktLuW9oQ+RIkrTJ5DR3v9ZOFfREkOjEmS79qeUTvkBQ==
 
 react-native-country-picker-modal@^2.0.0:
   version "2.0.0"

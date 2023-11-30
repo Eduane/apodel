@@ -3,7 +3,8 @@ import { layoutHelpers } from '../../../../../constants/helpers';
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal:layoutHelpers.commonSpace
+        marginHorizontal:layoutHelpers.commonSpace,
+        paddingBottom:10
     }
  
 });

@@ -2,9 +2,8 @@ import { View, Image, TouchableOpacity } from "react-native";
 import React, { FC, useState } from "react";
 import ImagePlaceHolder from "../../../../../../assets/images/imagePlaceHolder.jpg";
 import MainText from "../../../../../../components/MainText";
-import Icon from "react-native-vector-icons/Feather";
-import { Colors } from "../../../../../../constants/colors";
 import styles from "./styles";
+import QuantityButtons from "../../QuantityButtons";
 
 interface ItemProps {
   data: {
@@ -12,13 +11,12 @@ interface ItemProps {
     description: string;
     price: number;
   };
+  onPress: () => void;
 }
 
-const Item: FC<ItemProps> = ({ data }) => {
-  const [counter, setCounter] = useState(1);
-
+const Item: FC<ItemProps> = ({ data, onPress }) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Image style={styles.image} source={ImagePlaceHolder} />
       <View style={styles.rightPart}>
         <MainText textStyle={styles.title} size="xlarge" weight="bold">
@@ -32,23 +30,9 @@ const Item: FC<ItemProps> = ({ data }) => {
             Qmimi: {data?.price} €
           </MainText>
         </View>
-        <View style={styles.buttonsContainer}>
-          <TouchableOpacity
-            onPress={() => setCounter(counter - 1)}
-            style={styles.button}
-          >
-            <Icon name="minus" size={20} color={Colors.black} />
-          </TouchableOpacity>
-          <MainText size="xlarge">{counter}</MainText>
-          <TouchableOpacity
-            onPress={() => setCounter(counter + 1)}
-            style={styles.button}
-          >
-            <Icon name="plus" size={20} color={Colors.black} />
-          </TouchableOpacity>
-        </View>
+        <QuantityButtons />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

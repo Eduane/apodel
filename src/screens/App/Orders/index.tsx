@@ -1,10 +1,20 @@
-import { View, Text } from "react-native";
 import React from "react";
+import { View, FlatList } from "react-native";
+import styles from "./styles";
+import OrderItem from "./Item";
+import MainHeader from "../../../components/Headers/MainHeader";
+import { data } from "./helpers";
 
 const OrdersScreen = () => {
   return (
-    <View>
-      <Text>OrdersScreen</Text>
+    <View style={styles.container}>
+      <MainHeader title="Porosit" />
+      <FlatList
+        style={styles.flatList}
+        data={data}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => <OrderItem data={item} />}
+      />
     </View>
   );
 };

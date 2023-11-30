@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import Item from "./Item";
 import styles from "./styles";
 import { data } from "./helpers";
+import { navigate } from "../../../../../utils/navigationActions";
 
 const Content: FC = () => {
   return (
@@ -10,7 +11,12 @@ const Content: FC = () => {
       showsVerticalScrollIndicator={false}
       contentContainerStyle={styles.container}
       data={data}
-      renderItem={({ item }) => <Item data={item} />}
+      renderItem={({ item }) => (
+        <Item
+          onPress={() => navigate("ProductDetails", { data: item })}
+          data={item}
+        />
+      )}
     />
   );
 };
