@@ -1,6 +1,6 @@
 // OrderItemStyles.js
 import { StyleSheet } from 'react-native';
-import { Colors } from '../../../../constants/colors';
+import { Colors } from '../../../../../constants/colors';
 
 const styles = StyleSheet.create({
   header: {
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
   },
+  icon:{
+    alignItems:'center',
+    justifyContent:'center'
+  }
 });
 
 export default styles;

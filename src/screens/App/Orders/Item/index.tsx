@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, FlatList } from "react-native";
 import Collapsible from "react-native-collapsible";
 import MainText from "../../../../components/MainText";
-import styles from "./styles";
-import { FlatList } from "react-native-gesture-handler";
-import ProductItem from "./ProductItem";
+import { Colors } from "../../../../constants/colors";
 import { OrderProductType } from "../../../../types/orders";
+import ProductItem from "./ProductItem";
+import styles from "./styles";
 
 interface Order {
   orderId: string;
@@ -25,9 +25,18 @@ const OrderItem: FC<OrderItemProps> = ({ data }) => {
     setIsExpanded(!isExpanded);
   };
 
+  const headerStyle = {
+    borderBottomWidth: isExpanded ? 0 : 1,
+    borderBottomRightRadius: isExpanded ? 0 : 8,
+    borderBottomLeftRadius: isExpanded ? 0 : 8,
+  };
+
   return (
     <View>
-      <TouchableOpacity style={styles.header} onPress={toggleExpand}>
+      <TouchableOpacity
+        style={[styles.header, headerStyle]}
+        onPress={toggleExpand}
+      >
         <MainText size="xlarge" weight="bold">
           Porosia: #{data?.orderId}
         </MainText>
@@ -37,12 +46,10 @@ const OrderItem: FC<OrderItemProps> = ({ data }) => {
         </View>
       </TouchableOpacity>
       <Collapsible style={styles.collapsible} collapsed={!isExpanded}>
-        <View>
-          <FlatList
-            renderItem={({ item }) => <ProductItem data={item} />}
-            data={data.products}
-          />
-        </View>
+        <FlatList
+          renderItem={({ item }) => <ProductItem data={item} />}
+          data={data.products}
+        />
       </Collapsible>
     </View>
   );

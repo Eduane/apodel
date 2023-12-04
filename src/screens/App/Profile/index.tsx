@@ -112,7 +112,9 @@ const ProfileScreen = () => {
             />
           </View>
           <LastAddresCard />
-          <SavedAddressesButton />
+          <SavedAddressesButton
+            onPress={() => navigate("General", { screen: "SavedAddresses" })}
+          />
         </ScrollView>
 
         <MainButton
