@@ -5,6 +5,7 @@ const buttonSizes = {
   small: {
     height: 30,
     width: 100,
+    
   },
   medium: {
     height: 40,

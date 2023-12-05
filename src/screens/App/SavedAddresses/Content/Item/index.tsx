@@ -1,11 +1,13 @@
 import React, { FC, useState } from "react";
-import { View, TouchableOpacity, FlatList } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import Collapsible from "react-native-collapsible";
 import MainText from "../../../../../components/MainText";
 import AddresDetails from "./AddresDetails";
 import styles from "./styles";
 import Icon from "react-native-vector-icons/Entypo";
 import { AddresDetailsType } from "../../../../../types/general";
+import OptionsButtons from "./OptionsButtons";
+import { onDeleteAddresPress, onSaveDefaultAddresPress } from "./helpers";
 
 interface AddresType {
   name: string;
@@ -14,9 +16,11 @@ interface AddresType {
 
 interface AddresItemProps {
   data: AddresType;
+  onPress: () => void;
+  defaultAddres: boolean;
 }
 
-const AddresItem: FC<AddresItemProps> = ({ data }) => {
+const AddresItem: FC<AddresItemProps> = ({ data, defaultAddres, onPress }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpand = () => {
@@ -35,9 +39,21 @@ const AddresItem: FC<AddresItemProps> = ({ data }) => {
         style={[styles.header, headerStyle]}
         onPress={toggleExpand}
       >
-        <MainText size="xlarge" weight="bold">
-          {data?.name}
-        </MainText>
+        <View style={styles.left}>
+          <MainText size="xlarge" weight="bold">
+            {data?.name}
+          </MainText>
+          {defaultAddres && (
+            <MainText
+              textStyle={styles.defaultAddresText}
+              size="large"
+              weight="bold"
+            >
+              #Adresë kryesore
+            </MainText>
+          )}
+        </View>
+
         <View style={styles.icon}>
           <Icon name="address" size={25} />
         </View>
@@ -48,6 +64,10 @@ const AddresItem: FC<AddresItemProps> = ({ data }) => {
         />
         <AddresDetails
           data={{ leftText: "Rruga", rightText: data?.details.street }}
+        />
+        <OptionsButtons
+          onDeleteAddresPress={onDeleteAddresPress}
+          onSaveDefaultAddresPress={onSaveDefaultAddresPress}
         />
       </Collapsible>
     </View>

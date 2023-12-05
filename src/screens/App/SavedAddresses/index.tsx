@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./styles";
 import MainHeader from "../../../components/Headers/MainHeader";
 import { View } from "react-native";
-import MainText from "../../../components/MainText";
 import { goBack } from "../../../utils/navigationActions";
 import Content from "./Content";
 

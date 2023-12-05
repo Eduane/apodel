@@ -18,6 +18,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     height: '100%',
   },
+  left:{
+justifyContent:'space-between'
+
+  },
+  defaultAddresText:{
+    color:Colors.orange
+
+  },
   collapsible: {
     borderRightWidth: 1,
     borderLeftWidth: 1,
