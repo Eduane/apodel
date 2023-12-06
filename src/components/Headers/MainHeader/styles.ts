@@ -34,8 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   rightLabel: {
-    marginRight: 10,
-    flex: 1,
+
   },
   circle: {
     backgroundColor: Colors.orange,
@@ -53,6 +52,7 @@ const styles = StyleSheet.create({
     height: 25,
     width: 25,
   },
+ 
 });
 
 export default styles;

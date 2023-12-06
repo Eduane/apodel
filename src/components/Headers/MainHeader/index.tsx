@@ -76,6 +76,14 @@ const MainHeader: FC<MainHeaderProps> = ({
             </MainText>
           )}
           <View style={styles.rightContent}>
+            {showRightIcon && (
+              <TouchableOpacity
+                hitSlop={{ right: 10, bottom: 10 }}
+                onPress={onRightIconPress && onRightIconPress}
+              >
+                {rightIcon && <View style={styles.rightIcon}>{rightIcon}</View>}
+              </TouchableOpacity>
+            )}
             {rightLabel && (
               <TouchableOpacity
                 style={styles.rightLabel}
@@ -84,18 +92,12 @@ const MainHeader: FC<MainHeaderProps> = ({
                 <MainText
                   numberOfLines={1}
                   ellipsizeMode="tail"
-                  weight="regular"
+                  weight="medium"
+                  size="xlarge"
+                  textStyle={styles.rightLabel}
                 >
                   {rightLabel}
                 </MainText>
-              </TouchableOpacity>
-            )}
-            {showRightIcon && (
-              <TouchableOpacity
-                hitSlop={{ right: 10, bottom: 10 }}
-                onPress={onRightIconPress && onRightIconPress}
-              >
-                {rightIcon && <View style={styles.rightIcon}>{rightIcon}</View>}
               </TouchableOpacity>
             )}
           </View>

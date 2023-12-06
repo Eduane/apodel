@@ -8,7 +8,7 @@ import { data } from "./helpers";
 const OrdersScreen = () => {
   return (
     <View style={styles.container}>
-      <MainHeader title="Porosit" />
+      <MainHeader title="Porositë" showLeftIcon={false} />
       <FlatList
         style={styles.flatList}
         data={data}
