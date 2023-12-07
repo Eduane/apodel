@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
     borderBottomLeftRadius: 8,
     borderBottomRightRadius: 8,
   },
+  productsTitle:{
+    marginLeft:10,
+    marginTop:15
+  }
 });
 
 export default styles;

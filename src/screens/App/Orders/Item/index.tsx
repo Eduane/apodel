@@ -1,11 +1,11 @@
 import React, { FC, useState } from "react";
-import { View, Text, TouchableOpacity, FlatList } from "react-native";
+import { View, TouchableOpacity, FlatList } from "react-native";
 import Collapsible from "react-native-collapsible";
 import MainText from "../../../../components/MainText";
-import { Colors } from "../../../../constants/colors";
 import { OrderProductType } from "../../../../types/orders";
 import ProductItem from "./ProductItem";
 import styles from "./styles";
+import OrderSummary from "../../../../components/OrderSummary";
 
 interface Order {
   orderId: string;
@@ -46,6 +46,10 @@ const OrderItem: FC<OrderItemProps> = ({ data }) => {
         </View>
       </TouchableOpacity>
       <Collapsible style={styles.collapsible} collapsed={!isExpanded}>
+        <OrderSummary />
+        <MainText textStyle={styles.productsTitle} size="xlarge" weight="bold">
+          Produktet
+        </MainText>
         <FlatList
           renderItem={({ item }) => <ProductItem data={item} />}
           data={data.products}

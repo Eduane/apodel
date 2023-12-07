@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     container: {
     backgroundColor:Colors.lightBlue2,
       padding: 10,
-      marginBottom: 10,
+      marginTop: 10,
       flexDirection:'row',
       justifyContent:'space-between',
       height:70,

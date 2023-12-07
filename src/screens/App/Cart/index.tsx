@@ -1,9 +1,11 @@
-import React from "react";
-import { View } from "react-native";
+import React, { useState } from "react";
+import { ScrollView, View, Alert } from "react-native";
 import MainHeader from "../../../components/Headers/MainHeader";
 import ProductListComponent from "./ProductsCard";
 import styles from "./styles";
 import MapGetLocation from "../../../components/MapGetLocation";
+import OrderSummary from "../../../components/OrderSummary";
+import { handleOrderPress } from "./helpers";
 
 const CartScreen = () => {
   // Sample data for the store, number of products, and product list
@@ -18,15 +20,23 @@ const CartScreen = () => {
   ];
 
   return (
-    <View style={styles.container}>
+    <>
       <MainHeader showLeftIcon={false} title="Shporta" />
-      <ProductListComponent
-        storeName={storeName}
-        numberOfProducts={numberOfProducts}
-        products={products}
+
+      <ScrollView style={styles.container}>
+        <ProductListComponent
+          storeName={storeName}
+          numberOfProducts={numberOfProducts}
+          products={products}
+        />
+        <MapGetLocation />
+      </ScrollView>
+      <OrderSummary
+        onButtonPress={handleOrderPress}
+        showButton
+        containerStyle={styles.summary}
       />
-      <MapGetLocation />
-    </View>
+    </>
   );
 };
 
