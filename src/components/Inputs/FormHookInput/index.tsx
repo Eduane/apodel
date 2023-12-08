@@ -28,7 +28,7 @@ const FormHookInput: FC<FormHookInputProps> = ({
   return (
     <Controller
       {...props}
-      render={({ field: { onChange, onBlur, value } }) => {
+      render={({ field: { onChange, onBlur, value, disabled } }) => {
         return phoneInput ? (
           <CustomPhoneInput
             onValueChange={onChange}
@@ -37,6 +37,7 @@ const FormHookInput: FC<FormHookInputProps> = ({
           />
         ) : (
           <MainInput
+            editable={!disabled}
             containerStyle={containerStyle}
             placeholderTextColor={placeholderTextColor || "gray"}
             placeholder={placeholder}

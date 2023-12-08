@@ -6,7 +6,11 @@ const styles = StyleSheet.create({
         flex:1,
         backgroundColor:Colors.white
     },
-  
+    button:{
+        width:'100%',
+        alignItems:"center",
+        marginTop:10
+    }
 });
 
 export default styles;
