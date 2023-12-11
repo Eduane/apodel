@@ -1,9 +1,10 @@
 import { View, Image, TouchableOpacity } from "react-native";
-import React, { FC, useState } from "react";
+import React, { FC } from "react";
 import ImagePlaceHolder from "../../../../../../assets/images/imagePlaceHolder.jpg";
 import MainText from "../../../../../../components/MainText";
 import styles from "./styles";
 import QuantityButtons from "../../QuantityButtons";
+import useCartStore from "../../../../../../store/Cart/useCartStore";
 
 interface ItemProps {
   data: {
@@ -12,9 +13,18 @@ interface ItemProps {
     price: number;
   };
   onPress: () => void;
+  onPlusPress: () => void; // Add onPlusPress prop
+  onMinusPress: () => void; // Add onMinusPress prop
+  counter: number;
 }
 
-const Item: FC<ItemProps> = ({ data, onPress }) => {
+const Item: FC<ItemProps> = ({
+  data,
+  onPress,
+  onPlusPress,
+  onMinusPress,
+  counter,
+}) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
       <Image style={styles.image} source={ImagePlaceHolder} />
@@ -30,7 +40,11 @@ const Item: FC<ItemProps> = ({ data, onPress }) => {
             Qmimi: {data?.price} €
           </MainText>
         </View>
-        <QuantityButtons />
+        <QuantityButtons
+          counter={counter}
+          onPlusPress={onPlusPress} // Pass onPlusPress prop
+          onMinusPress={onMinusPress} // Pass onMinusPress prop
+        />
       </View>
     </TouchableOpacity>
   );

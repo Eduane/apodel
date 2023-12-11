@@ -8,11 +8,16 @@ import MainButton from "../../../../../components/Buttons/MainButton";
 import MainHeader from "../../../../../components/Headers/MainHeader";
 import { goBack } from "../../../../../utils/navigationActions";
 import { useRoute } from "@react-navigation/native";
+import useCartStore from "../../../../../store/Cart/useCartStore";
 
 const ProductDetailsScreen: FC = () => {
   const navigate = useRoute();
+  const { addToCart, removeFromCart, cartItems } = useCartStore();
   const data = navigate?.params?.data;
+  const quantity =
+    cartItems?.find((item) => item?.id == data?.id)?.quantity || 0;
 
+  console.log("data", quantity);
   return (
     <>
       <MainHeader
@@ -39,7 +44,11 @@ const ProductDetailsScreen: FC = () => {
             {data?.description}
           </MainText>
           <View style={styles.bottom}>
-            <QuantityButtons />
+            <QuantityButtons
+              counter={quantity}
+              onMinusPress={() => removeFromCart(data?.id)}
+              onPlusPress={() => addToCart(data)}
+            />
             <MainButton size="large" label="Shto në shportë" />
           </View>
         </View>
