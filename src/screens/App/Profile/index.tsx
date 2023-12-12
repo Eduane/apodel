@@ -13,9 +13,11 @@ import { initialFormValues, validationSchema } from "./helpers";
 import { navigate } from "../../../utils/navigationActions";
 import LastAddresCard from "./LastAddresCard";
 import SavedAddressesButton from "./SavedAddressesButton";
+import { useAuthStore } from "../../../store/Auth";
 
 const ProfileScreen = () => {
   const [canEdit, setCanEdit] = useState(false);
+  const { logout } = useAuthStore();
   const {
     control,
     handleSubmit,
@@ -118,7 +120,7 @@ const ProfileScreen = () => {
         </ScrollView>
 
         <MainButton
-          onPress={() => navigate("Auth", { screen: "Welcome" })}
+          onPress={() => logout()}
           size="small"
           containerStyle={styles.submitButton}
           label="Dil"

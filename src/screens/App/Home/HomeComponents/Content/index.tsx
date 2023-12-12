@@ -12,7 +12,7 @@ const Content = () => {
       data={data}
       renderItem={({ item }) => (
         <Item
-          onPress={() => navigate("RestaurantDetails")}
+          onPress={() => navigate("RestaurantDetails", { name: item?.name })}
           isClosed={!isRestaurantOpen(item?.schedule)}
           data={item}
         />

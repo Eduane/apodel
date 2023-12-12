@@ -16,8 +16,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { validationSchema } from "./helpers";
 import Logo from "../../../assets/images/logoYellow.png";
 import AuthLayout from "../../../layout/AuthLayout";
+import { useAuthStore } from "../../../store/Auth";
 
 const LoginScreen = () => {
+  const { login } = useAuthStore();
   const {
     control,
     handleSubmit,
@@ -28,8 +30,7 @@ const LoginScreen = () => {
 
   const onSubmit = (data) => {
     // Handle form submission here
-    console.log(data);
-    navigate("App");
+    login(data?.phone, data?.password);
   };
 
   return (
